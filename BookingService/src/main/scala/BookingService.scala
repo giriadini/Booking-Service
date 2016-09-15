@@ -11,7 +11,7 @@ def main(args:Array[String]]){
  val conf = new SparkConf().setAppName("BookingCustomer").setMaster("local[2]")
     val sc = new SparkContext(conf)
     val sqlContext = new org.apache.spark.sql.SQLContext(sc)
-    val bookingDetails = sqlContext.read.json("/Users/giriadini/Documents/HolidayCheck/challenge/f1.json")
+    val bookingDetails = sqlContext.read.json("f1.json")
 	
 	val bd_destination = bookingDetails("destination")
 	val bd_buId = bookingDetails("buId")
@@ -22,7 +22,7 @@ def main(args:Array[String]]){
 	val bd_destination_filter = bookingDetails.filter(bd_destination.!==("") )
 
 	 
-	 val transactionDetails = sqlContext.read.json("/Users/giriadini/Documents/HolidayCheck/challenge/f2.json")
+	 val transactionDetails = sqlContext.read.json("f2.json")
 	 
 	val ts_logId = transactionDetails("logId")
 	val ts_buId = transactionDetails("buId")
