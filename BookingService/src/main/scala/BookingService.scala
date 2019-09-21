@@ -5,6 +5,7 @@ import org.apache.spark.SparkContext
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 
+//spark 1.6 version
 
 object BookingService {
   
