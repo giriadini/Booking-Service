@@ -10,7 +10,7 @@ object BookingService {
   
   def main(args: Array[String]): Unit= {
     
-    //Loading the context
+    //Load the spark  context
     val conf = new SparkConf().setAppName("BookingDetails").setMaster("local[2]")
     val sc = new SparkContext(conf)
     val sqlContext = new org.apache.spark.sql.SQLContext(sc)
